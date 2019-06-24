@@ -11,17 +11,17 @@ def index(request):
     num_blogpost = Blogpost.objects.all().count()
      
     # The 'all()' is implied by default.    
-    num_blogger = Blogger.objects.count()
+    num_bloggers = Blogger.objects.count()
 
     # Number of visits to this view, as counted in the session variable.
     num_visits = request.session.get('num_visits', 0)
     request.session['num_visits'] = num_visits + 1
 
     context = {
-        'num_books': num_blogpost,
+        'num_blogpost': num_blogpost,
         # 'num_instances': num_instances,
         # 'num_instances_available': num_instances_available,
-        'num_authors': num_bloggers,
+        'num_bloggers': num_bloggers,
         'num_visits': num_visits,
     }
 

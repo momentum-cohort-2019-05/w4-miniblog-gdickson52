@@ -34,7 +34,7 @@ class Blogpost(models.Model):
     
     def get_absolute_url(self):
         """Returns the url to access a detail record for this blog."""
-        return reverse('blog-detail', args=[str(self.id)])
+        return reverse('blogpost-detail', args=[str(self.id)])
     
     class Meta:
         verbose_name_plural = "Bloggers Like Me"
